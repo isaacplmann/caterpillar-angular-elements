@@ -151,15 +151,7 @@
             "tsConfig": "apps/react/tsconfig.app.json",
             "assets": ["apps/react/src/favicon.ico", "apps/react/src/assets"],
             "styles": ["apps/react/src/styles.css"],
-            "scripts": [
-              "dist/apps/ng-elements/polyfills-es5.js",
-              "dist/apps/ng-elements/polyfills-es2015.js",
-              "dist/apps/ng-elements/scripts.js",
-              "dist/apps/ng-elements/polyfill-webcomp-es5.js",
-              "dist/apps/ng-elements/polyfill-webcomp.js",
-              "dist/apps/ng-elements/main-es2015.js",
-              "dist/apps/ng-elements/main-es5.js"
-            ],
+            "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
           "configurations": {

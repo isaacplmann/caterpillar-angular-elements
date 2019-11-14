@@ -4,7 +4,8 @@ import {
   Output,
   EventEmitter,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  ChangeDetectorRef
 } from '@angular/core';
 
 import { AppComponentAttributes } from '@caterpillar-elements-demo/ng-element-types';
@@ -15,7 +16,14 @@ import { AppComponentAttributes } from '@caterpillar-elements-demo/ng-element-ty
 })
 export class AppComponent implements OnChanges, AppComponentAttributes {
   @Input() person = { name: 'Bob' };
+  @Input() registerCallback = callback => {
+    this.callback = callback;
+    this.changeDetector.detectChanges();
+  };
   @Output() greet: EventEmitter<string> = new EventEmitter();
+  callback = name => name;
+
+  constructor(private changeDetector: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
     const { person } = changes;
@@ -29,6 +37,6 @@ export class AppComponent implements OnChanges, AppComponentAttributes {
   }
 
   onClick() {
-    this.greet.emit(`Greetings, ${this.person.name}`);
+    this.greet.emit(this.callback(this.person.name));
   }
 }
