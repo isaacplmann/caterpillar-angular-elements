@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
-
+import { SharedModule } from '@caterpillar-elements-demo/shared';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [BrowserModule, SharedModule],
   declarations: [AppComponent],
   providers: [],
   bootstrap: [],

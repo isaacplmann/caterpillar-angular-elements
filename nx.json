@@ -22,6 +22,9 @@
     },
     "ng-element-types": {
       "tags": []
+    },
+    "shared": {
+      "tags": []
     }
   }
 }

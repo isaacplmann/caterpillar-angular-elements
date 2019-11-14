@@ -18,7 +18,8 @@
     "paths": {
       "@caterpillar-elements-demo/ng-element-types": [
         "libs/ng-element-types/src/index.ts"
-      ]
+      ],
+      "@caterpillar-elements-demo/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
