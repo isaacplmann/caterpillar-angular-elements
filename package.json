@@ -27,7 +27,7 @@
     "dep-graph": "nx dep-graph",
     "build:react": "yarn run build:ng-elements:externals && ng build react",
     "help": "nx help",
-    "build:ng-elements:externals": "ng build --extra-webpack-config apps/ng-elements/webpack.externals.js --single-bundle --prod --project ng-elements --output-hashing=none && cp dist/apps/ng-elements/*.js apps/react/src/assets"
+    "build:ng-elements:externals": "ng build --prod ng-elements && cp dist/apps/ng-elements/*.js apps/react/src/assets"
   },
   "private": true,
   "dependencies": {

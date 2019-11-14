@@ -9,12 +9,24 @@
   </head>
   <body>
     <ng-element name="Isaac"></ng-element>
+    <second-element></second-element>
     <script>
       const myEl = document.querySelector('ng-element');
       myEl.addEventListener('greet', event => {
         console.log(event);
         console.log(event.detail);
       });
+      // setTimeout(() => {
+      //   const script1 = document.createElement('script');
+      //   script1.setAttribute('src', 'second-es2015.js');
+      //   script1.setAttribute('type', 'module');
+      //   document.body.appendChild(script1);
+      //   const script2 = document.createElement('script');
+      //   script2.setAttribute('src', 'second-es5.js');
+      //   script2.setAttribute('nomodule', true);
+      //   script2.setAttribute('defer', true);
+      //   document.body.appendChild(script2);
+      // }, 1000);
     </script>
   </body>
 </html>
