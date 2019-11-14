@@ -8,6 +8,13 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <caterpillar-elements-demo-root></caterpillar-elements-demo-root>
+    <ng-element name="Isaac"></ng-element>
+    <script>
+      const myEl = document.querySelector('ng-element');
+      myEl.addEventListener('greet', event => {
+        console.log(event);
+        console.log(event.detail);
+      });
+    </script>
   </body>
 </html>

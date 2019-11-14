@@ -13,6 +13,15 @@
     },
     "ng-elements": {
       "tags": []
+    },
+    "react": {
+      "tags": []
+    },
+    "react-e2e": {
+      "tags": []
+    },
+    "ng-element-types": {
+      "tags": []
     }
   }
 }
