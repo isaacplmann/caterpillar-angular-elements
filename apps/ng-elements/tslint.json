@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "caterpillarElementsDemo",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "caterpillar-elements-demo",
+      "kebab-case"
+    ]
+  }
+}
