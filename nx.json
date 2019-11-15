@@ -31,6 +31,9 @@
     },
     "test-services": {
       "tags": []
+    },
+    "test-ui-e2e": {
+      "tags": []
     }
   }
 }

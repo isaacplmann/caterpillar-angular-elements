@@ -25,7 +25,9 @@
               "apps/ng-elements/src/favicon.ico",
               "apps/ng-elements/src/assets"
             ],
-            "styles": ["apps/ng-elements/src/styles.css"],
+            "styles": [
+              "apps/ng-elements/src/styles.css"
+            ],
             "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
@@ -99,7 +101,10 @@
               "apps/ng-elements/tsconfig.app.json",
               "apps/ng-elements/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/ng-elements/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-elements/**"
+            ]
           }
         },
         "test": {
@@ -133,8 +138,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/ng-elements-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/ng-elements-e2e/**"]
+            "tsConfig": [
+              "apps/ng-elements-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/ng-elements-e2e/**"
+            ]
           }
         }
       }
@@ -153,8 +163,13 @@
             "main": "apps/react/src/main.tsx",
             "polyfills": "apps/react/src/polyfills.ts",
             "tsConfig": "apps/react/tsconfig.app.json",
-            "assets": ["apps/react/src/favicon.ico", "apps/react/src/assets"],
-            "styles": ["apps/react/src/styles.css"],
+            "assets": [
+              "apps/react/src/favicon.ico",
+              "apps/react/src/assets"
+            ],
+            "styles": [
+              "apps/react/src/styles.css"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -201,7 +216,10 @@
               "apps/react/tsconfig.app.json",
               "apps/react/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/react/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/react/**"
+            ]
           }
         },
         "test": {
@@ -234,8 +252,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/react-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/react-e2e/**"]
+            "tsConfig": [
+              "apps/react-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/react-e2e/**"
+            ]
           }
         }
       }
@@ -253,7 +276,10 @@
               "libs/ng-element-types/tsconfig.lib.json",
               "libs/ng-element-types/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ng-element-types/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ng-element-types/**"
+            ]
           }
         },
         "test": {
@@ -285,7 +311,10 @@
               "libs/shared/tsconfig.lib.json",
               "libs/shared/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/**"
+            ]
           }
         },
         "test": {
@@ -312,7 +341,10 @@
               "libs/test-ui/tsconfig.lib.json",
               "libs/test-ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/test-ui/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/test-ui/**"
+            ]
           }
         },
         "test": {
@@ -321,6 +353,21 @@
             "jestConfig": "libs/test-ui/jest.config.js",
             "tsConfig": "libs/test-ui/tsconfig.spec.json",
             "setupFile": "libs/test-ui/src/test-setup.ts"
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/test-ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       },
@@ -339,7 +386,10 @@
               "libs/test-services/tsconfig.lib.json",
               "libs/test-services/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/test-services/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/test-services/**"
+            ]
           }
         },
         "test": {
@@ -352,6 +402,41 @@
         }
       },
       "schematics": {}
+    },
+    "test-ui-e2e": {
+      "root": "apps/test-ui-e2e",
+      "sourceRoot": "apps/test-ui-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/test-ui-e2e/cypress.json",
+            "tsConfig": "apps/test-ui-e2e/tsconfig.e2e.json",
+            "devServerTarget": "test-ui:storybook",
+            "headless": false,
+            "watch": true
+          },
+          "configurations": {
+            "headless": {
+              "devServerTarget": "test-ui:storybook:ci",
+              "headless": true
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/test-ui-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/test-ui-e2e/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
