@@ -16,6 +16,9 @@
             "main": "apps/ng-elements/src/main.ts",
             "polyfills": "apps/ng-elements/src/polyfills.ts",
             "tsConfig": "apps/ng-elements/tsconfig.app.json",
+            "additionalLazyModules": [
+              "apps/ng-elements/src/app/second.module#SecondModule"
+            ],
             "extraWebpackConfig": "apps/ng-elements/webpack.externals.js",
             "aot": false,
             "assets": [
@@ -291,6 +294,60 @@
             "jestConfig": "libs/shared/jest.config.js",
             "tsConfig": "libs/shared/tsconfig.spec.json",
             "setupFile": "libs/shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "test-ui": {
+      "projectType": "library",
+      "root": "libs/test-ui",
+      "sourceRoot": "libs/test-ui/src",
+      "prefix": "caterpillar-elements-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/test-ui/tsconfig.lib.json",
+              "libs/test-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/test-ui/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/test-ui/jest.config.js",
+            "tsConfig": "libs/test-ui/tsconfig.spec.json",
+            "setupFile": "libs/test-ui/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "test-services": {
+      "projectType": "library",
+      "root": "libs/test-services",
+      "sourceRoot": "libs/test-services/src",
+      "prefix": "caterpillar-elements-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/test-services/tsconfig.lib.json",
+              "libs/test-services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/test-services/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/test-services/jest.config.js",
+            "tsConfig": "libs/test-services/tsconfig.spec.json",
+            "setupFile": "libs/test-services/src/test-setup.ts"
           }
         }
       },

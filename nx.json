@@ -25,6 +25,12 @@
     },
     "shared": {
       "tags": []
+    },
+    "test-ui": {
+      "tags": []
+    },
+    "test-services": {
+      "tags": []
     }
   }
 }

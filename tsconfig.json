@@ -19,7 +19,11 @@
       "@caterpillar-elements-demo/ng-element-types": [
         "libs/ng-element-types/src/index.ts"
       ],
-      "@caterpillar-elements-demo/shared": ["libs/shared/src/index.ts"]
+      "@caterpillar-elements-demo/shared": ["libs/shared/src/index.ts"],
+      "@caterpillar-elements-demo/test-ui": ["libs/test-ui/src/index.ts"],
+      "@caterpillar-elements-demo/test-services": [
+        "libs/test-services/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

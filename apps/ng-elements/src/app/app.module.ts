@@ -3,9 +3,10 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { SharedModule } from '@caterpillar-elements-demo/shared';
 import { AppComponent } from './app.component';
+import { SecondModule } from './second.module';
 
 @NgModule({
-  imports: [BrowserModule, SharedModule],
+  imports: [BrowserModule, SharedModule, SecondModule],
   declarations: [AppComponent],
   providers: [],
   bootstrap: [],

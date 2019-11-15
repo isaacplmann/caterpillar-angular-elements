@@ -1,0 +1,8 @@
+.primary {
+  background: lightblue;
+}
+
+.warning {
+  border-color: red;
+  color: red;
+}
